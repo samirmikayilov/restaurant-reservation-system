@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Restaurant Reservation UI</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🍽️ Restaurant Reservation – Demo UI</h1>
+      <div class="toolbar">
+        <span id="authState" class="tag">Guest</span>
+        <button id="logoutBtn" class="btn btn-outline hidden">Logout</button>
+      </div>
+    </header>
+
+    <div class="baseurl">
+      API base URL:
+      <input id="baseUrl" value="http://localhost:8080"/>
+      <button id="saveBase" class="btn btn-outline">Yadda saxla</button>
+      <span class="muted">(məs: http://localhost:8080)</span>
+    </div>
+
+    <div class="grid" style="margin-top:10px">
+      <section class="card span6" id="authCard">
+        <h2>🔐 Giriş / Qeydiyyat</h2>
+        <div class="row">
+          <div style="flex:1">
+            <label>İstifadəçi adı</label>
+            <input id="authUsername" placeholder="samir" />
+          </div>
+          <div style="flex:1">
+            <label>Şifrə</label>
+            <input id="authPassword" type="password" placeholder="12345" />
+          </div>
+        </div>
+        <div class="row" style="margin-top:10px">
+          <button id="registerBtn" class="btn btn-outline">Qeydiyyat</button>
+          <button id="loginBtn" class="btn btn-primary">Giriş</button>
+        </div>
+      </section>
+
+      <section class="card span6" id="createResvCard">
+        <h2>🗓️ Rezervasiya yarat</h2>
+        <div class="row">
+          <div style="flex:1">
+            <label>Restoran ID</label>
+            <input id="resvRestaurantId" placeholder="1" />
+          </div>
+          <div style="flex:1">
+            <label>Masa ID</label>
+            <input id="resvTableId" placeholder="5" />
+          </div>
+        </div>
+        <div class="row">
+          <div style="flex:1">
+            <label>Başlama vaxtı</label>
+            <input id="resvStart" placeholder="2025-11-12T18:00:00" />
+          </div>
+          <div style="flex:1">
+            <label>Bitmə vaxtı</label>
+            <input id="resvEnd" placeholder="2025-11-12T20:00:00" />
+          </div>
+        </div>
+        <div class="row" style="margin-top:10px">
+          <button id="createResvBtn" class="btn btn-success">Rezerv et</button>
+        </div>
+      </section>
+
+      <section class="card span12" id="myResvCard">
+        <div style="display:flex;align-items:center;gap:10px">
+          <h2 style="margin-right:auto">📋 Rezervlərim</h2>
+          <button id="refreshMyBtn" class="btn btn-outline">Yenilə</button>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Restoran</th>
+              <th>Masa</th>
+              <th>Başla</th>
+              <th>Bitir</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="myResvTbody">
+            <tr><td colspan="6" class="muted">Məlumat yoxdur.</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="card span12" id="adminCard">
+        <div style="display:flex;align-items:center;gap:10px">
+          <h2>🛠️ Admin panel</h2>
+          <span class="pill" id="adminBadge" style="display:none">ADMIN</span>
+        </div>
+        <div class="row">
+          <div class="span6" style="flex:1">
+            <h3 style="margin:10px 0">Restoran yarat</h3>
+            <label>Ad</label>
+            <input id="adminRestName" placeholder="Cafe Azure" />
+            <label>Ünvan</label>
+            <input id="adminRestAddr" placeholder="Bakı, ..." />
+            <button id="createRestBtn" class="btn btn-outline" style="margin-top:10px">Əlavə et</button>
+          </div>
+          <div class="span6" style="flex:1">
+            <h3 style="margin:10px 0">Masa yarat</h3>
+            <label>Restoran ID</label>
+            <input id="adminTabRestId" placeholder="1" />
+            <label>Yer sayı</label>
+            <input id="adminSeats" placeholder="4" />
+            <button id="createTableBtn" class="btn btn-outline" style="margin-top:10px">Əlavə et</button>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <div id="toast" class="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>
