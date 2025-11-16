@@ -11,7 +11,7 @@ etmək üçün istifadə olunur.
 
 ### 🔐 Authentication & Authorization
 
--   ✔️ User Register\ Email OTP ilə qeydiyyat\
+-   ✔️ User Register\ Email OTP ilə qeydiyyat
 -   ✔️ User Login\
 -   ✔️ JWT Token əsasında təhlükəsiz giriş\
 -   ✔️ Logout\
