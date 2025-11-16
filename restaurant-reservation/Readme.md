@@ -11,7 +11,7 @@ etmək üçün istifadə olunur.
 
 ### 🔐 Authentication & Authorization
 
--   ✔️ User Register\
+-   ✔️ User Register\ Email OTP ilə qeydiyyat\
 -   ✔️ User Login\
 -   ✔️ JWT Token əsasında təhlükəsiz giriş\
 -   ✔️ Logout\
@@ -87,7 +87,6 @@ CREATE DATABASE restaurant_reservation;
 
 ## 🧭 Gələcək Planlar (TODO)
 
--   Email OTP ilə qeydiyyat\
 -   Kafka ilə Notification Service\
 -   Admin panel UI\
 -   Docker Compose\
